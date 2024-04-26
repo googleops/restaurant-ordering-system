@@ -99,4 +99,25 @@ this is a simple restaurant ordering system that allows customers to browse avai
         - properties: quantity, price_at_order
         - datasource: db
 
+### Loopback Relation
+1. **For the Customer model (one side)**:
+   - **Relation type**: has many
+   - **Model to create a relationship with**: Order
+   - **Property name for the relation**: ordersPlaced
+   - **Custom foreign key**: customerId
+   - **Require a through model?**: No (This is important; for one-to-many, you do not need a through model)
+
+2. **For the Order model (many side)**:
+   - **Relation type**: belongs to
+   - **Model to create a relationship with**: Customer
+   - **Property name for the relation**: customer
+   - **Custom foreign key**: customerId
+   - **Allow the relation to be nested in REST APIs**: No
+   - **Disable the relation from being included**: No
+
+
+- generate database `node ./server/create-lb-tables.js`
+- create user `node ./server/create-lb-user.js`
+- start the server `node .`
+
 

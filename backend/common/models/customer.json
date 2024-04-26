@@ -29,7 +29,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "ordersPlaced": {
+      "type": "hasMany",
+      "model": "Order",
+      "foreignKey": "customerId"
+    }
+  },
   "acls": [],
   "methods": {}
 }
