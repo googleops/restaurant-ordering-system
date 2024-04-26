@@ -34,5 +34,21 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Customer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MenuItem": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Order": {
+    "dataSource": "db",
+    "public": true
+  },
+  "OrderItem": {
+    "dataSource": "db",
+    "public": false
   }
 }

@@ -23,6 +23,35 @@ this is a simple restaurant ordering system that allows customers to browse avai
 - Menu Item to Order (Many-to-Many): A menu item can be part of many orders, and an order can include multiple menu items. This relationship should be managed through an intermediary table that records the quantities of each menu item in the order.
 - Customer to Order (One-to-Many): A customer can have multiple orders but each order belongs to one customer.
 
+## Database Schema
+### Customer
+- id: number (primary key)
+- username: string
+- password: encrypted string
+- email: string
+- phone: string
+- address: string
+
+### Menu Item
+- id: number (primary key)
+- name: string
+- description: string
+- quantity: number
+- price: number
+- imageUrl: string
+
+### Order
+- id: number (primary key)
+- customer_id: number (foreign key)
+- discount: number
+- bought_at: datetime
+
+### OrderItem (Intermediary Table)
+- order_id: number (foreign key)
+- menu_item_id: number (foreign key)
+- quantity: number
+- price_at_order: number
+
 ## Installation
 ### Setup nodejs
 - check nodejs version `node -v` or `node --version` if not installed, install nodejs
@@ -52,5 +81,22 @@ this is a simple restaurant ordering system that allows customers to browse avai
     - What kind of application do you have in mind? api-server (A LoopBack API server with local User auth)
 - install dependencies `npm install`
 - install postgresql connector `npm install --save loopback-connector-postgresql`
+- create objects
+    - lb model
+        - name: Customer
+        - properties: username, password, email, phone, address
+        - datasource: db
+    - lb model
+        - name: MenuItem
+        - properties: name, description, quantity, price, imageUrl
+        - datasource: db
+    - lb model
+        - name: Order
+        - properties: discount, bought_at
+        - datasource: db
+    - lb model
+        - name: OrderItem
+        - properties: quantity, price_at_order
+        - datasource: db
 
 
