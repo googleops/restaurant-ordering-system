@@ -21,6 +21,11 @@
       "type": "belongsTo",
       "model": "Order",
       "foreignKey": "orderId"
+    },
+    "menuItem": {
+      "type": "belongsTo",
+      "model": "MenuItem",
+      "foreignKey": "menuItemId"
     }
   },
   "acls": [],

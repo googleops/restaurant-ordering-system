@@ -130,4 +130,18 @@ this is a simple restaurant ordering system that allows customers to browse avai
     - **Allow the relation to be nested in REST APIs**: No
     - **Disable the relation from being included**: No
 
+5. **For the MenuItem model (many side)**:
+    - **Relation type**: has many
+    - **Model to create a relationship with**: OrderItem
+    - **Property name for the relation**: orders
+    - **Custom foreign key**: menuItemId
+    - **Require a through model?**: No
+
+6. **For the OrderItem model (many side)**:
+    - **Relation type**: belongs to
+    - **Model to create a relationship with**: MenuItem
+    - **Property name for the relation**: menuItem
+    - **Custom foreign key**: menuItemId
+    - **Allow the relation to be nested in REST APIs**: No
+    - **Disable the relation from being included**: No
 
