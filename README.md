@@ -82,6 +82,7 @@ this is a simple restaurant ordering system that allows customers to browse avai
 - install dependencies `npm install`
 - install postgresql connector `npm install --save loopback-connector-postgresql`
 - generate database tables `node ./server/create-lb-tables.js`
+- create admin user `node ./server/create-admin.js`
 
 ### Loopback Model
 1. **Customer Model**:

@@ -19,7 +19,7 @@ describe('Customer', function() {
 
     // clean all customers before running the tests
     before(async function() {
-        await app.models.Customer.destroyAll();
+        await app.models.Customer.destroyAll({ principalType: { neq: 'admin' } });
     });
     beforeEach(async function() {
         const customer = await app.models.Customer.create({
@@ -186,6 +186,20 @@ describe('Customer', function() {
             expect(err.response.status).to.equal(401); // Unauthorized
             expect(err.response.data.error.message).to.equal('Authorization Required');
         }
+    });
+
+    it('should be able to get all customers as admin', async function() {
+        const loginResponse = await axios.post('/api/customers/login', {
+            username: 'admin',
+            password: 'admin123'
+        });
+        token = loginResponse.data.id;
+
+        const response = await axios.get(`/api/customers?access_token=${token}`);
+        const customers = response.data;
+        expect(customers).to.exist;
+        expect(customers).to.be.an('array');
+        expect(customers).to.have.lengthOf(4);
     });
 
     it('should be able to update customer data', async function() {
