@@ -81,23 +81,25 @@ this is a simple restaurant ordering system that allows customers to browse avai
     - What kind of application do you have in mind? api-server (A LoopBack API server with local User auth)
 - install dependencies `npm install`
 - install postgresql connector `npm install --save loopback-connector-postgresql`
-- create objects
-    - lb model
-        - name: Customer
-        - properties: username, password, email, phone, address
-        - datasource: db
-    - lb model
-        - name: MenuItem
-        - properties: name, description, quantity, price, imageUrl
-        - datasource: db
-    - lb model
-        - name: Order
-        - properties: discount, bought_at
-        - datasource: db
-    - lb model
-        - name: OrderItem
-        - properties: quantity, price_at_order
-        - datasource: db
+- generate database tables `node ./server/create-lb-tables.js`
+
+### Loopback Model
+1. **Customer Model**:
+    - name: Customer
+    - properties: username, password, email, phone, address
+    - datasource: db
+2. **MenuItem Model**:
+    - name: MenuItem
+    - properties: name, description, quantity, price, imageUrl
+    - datasource: db
+3. **Order Model**:
+    - name: Order
+    - properties: discount, bought_at
+    - datasource: db
+4. **OrderItem Model**:
+    - name: OrderItem
+    - properties: quantity, price_at_order
+    - datasource: db
 
 ### Loopback Relation
 1. **For the Customer model (one side)**:
