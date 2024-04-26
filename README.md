@@ -254,6 +254,39 @@ this is a simple restaurant ordering system that allows customers to browse avai
         - 200: No Content
         - 401: Unauthorized
 
+## Order
+| Method | Endpoint | Description | Auth |
+| --- | --- | --- | --- |
+| GET | /api/Order | Get all orders | admin |
+| POST | /api/newOrder | Create a new order | YES |
+| GET | /api/Order/{id} | Get an order by id | YES |
+| GET | /api/Order/my-orders | Get all orders by customer id | YES |
+
+- **GET /api/Order**: Get all orders
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+    
+- **POST /api/newOrder**: Create a new order
+    - Request Body:
+        - discount: number
+        - items: array of objects
+            - menuItemId: number
+            - quantity: number
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **GET /api/Order/{id}**: Get an order by id
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **GET /api/Order/my-orders**: Get all orders by customer id
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
 # Testing
 - install mocha `npm install -g mocha`
 - install chai `npm install chai --save-dev`
