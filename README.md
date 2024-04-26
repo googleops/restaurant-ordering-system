@@ -51,6 +51,6 @@ this is a simple restaurant ordering system that allows customers to browse avai
     - Which version of LoopBack would you like to use? 3.x (Maintenance Long Term Support)
     - What kind of application do you have in mind? api-server (A LoopBack API server with local User auth)
 - install dependencies `npm install`
-
+- install postgresql connector `npm install --save loopback-connector-postgresql`
 
 
