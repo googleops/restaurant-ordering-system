@@ -115,9 +115,19 @@ this is a simple restaurant ordering system that allows customers to browse avai
    - **Allow the relation to be nested in REST APIs**: No
    - **Disable the relation from being included**: No
 
+3. **For the Order model (one side)**:
+    - **Relation type**: has many
+    - **Model to create a relationship with**: OrderItem
+    - **Property name for the relation**: items
+    - **Custom foreign key**: orderId
+    - **Require a through model?**: No
 
-- generate database `node ./server/create-lb-tables.js`
-- create user `node ./server/create-lb-user.js`
-- start the server `node .`
+4. **For the OrderItem model (many side)**:
+    - **Relation type**: belongs to
+    - **Model to create a relationship with**: Order
+    - **Property name for the relation**: order
+    - **Custom foreign key**: orderId
+    - **Allow the relation to be nested in REST APIs**: No
+    - **Disable the relation from being included**: No
 
 
