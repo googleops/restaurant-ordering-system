@@ -208,6 +208,52 @@ this is a simple restaurant ordering system that allows customers to browse avai
         - 200: No Content
         - 401: Unauthorized
 
+## MenuItem
+| Method | Endpoint | Description | Auth |
+| --- | --- | --- | --- |
+| GET | /api/MenuItem | Get all menu items | NO |
+| POST | /api/MenuItem | Create a new menu item | admin |
+| GET | /api/MenuItem/{id} | Get a menu item by id | NO |
+| PUT | /api/MenuItem/{id} | Update a menu item by id | admin |
+| DELETE | /api/MenuItem/{id} | Delete a menu item by id | admin |
+
+- **GET /api/MenuItem**: Get all menu items
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **POST /api/MenuItem**: Create a new menu item
+    - Request Body:
+        - name: string
+        - description: string
+        - quantity: number
+        - price: number
+        - imageUrl: string
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **GET /api/MenuItem/{id}**: Get a menu item by id
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **PUT /api/MenuItem/{id}**: Update a menu item by id
+    - Request Body:
+        - name: string
+        - description: string
+        - quantity: number
+        - price: number
+        - imageUrl: string
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **DELETE /api/MenuItem/{id}**: Delete a menu item by id
+    - Response:
+        - 200: No Content
+        - 401: Unauthorized
+
 # Testing
 - install mocha `npm install -g mocha`
 - install chai `npm install chai --save-dev`
