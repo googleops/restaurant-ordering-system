@@ -147,3 +147,70 @@ this is a simple restaurant ordering system that allows customers to browse avai
     - **Allow the relation to be nested in REST APIs**: No
     - **Disable the relation from being included**: No
 
+# API Documentation
+## Authentication
+- **POST /api/Customer/login**: Login a customer
+    - Request Body:
+        - username: string
+        - password: string
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **POST /api/Customer/logout**: Logout a customer
+    - Response:
+        - 204: No Content
+
+## Customer
+| Method | Endpoint | Description | Auth |
+| --- | --- | --- | --- |
+| GET | /api/Customer | Get all customers | YES |
+| POST | /api/Customer | Create a new customer | NO |
+| GET | /api/Customer/{id} | Get a customer by id | YES |
+| PUT | /api/Customer/{id} | Update a customer by id | YES |
+| DELETE | /api/Customer/{id} | Delete a customer by id | YES |
+
+- **GET /api/Customer**: Get all customers
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **POST /api/Customer**: Create a new customer
+    - Request Body:
+        - username: string
+        - password: string
+        - email: string
+        - phone: string
+        - address: string
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **GET /api/Customer/{id}**: Get a customer by id
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **PUT /api/Customer/{id}**: Update a customer by id
+    - Request Body:
+        - username: string
+        - password: string
+        - email: string
+        - phone: string
+        - address: string
+    - Response:
+        - 200: OK
+        - 401: Unauthorized
+
+- **DELETE /api/Customer/{id}**: Delete a customer by id
+    - Response:
+        - 200: No Content
+        - 401: Unauthorized
+
+# Testing
+- install mocha `npm install -g mocha`
+- install chai `npm install chai --save-dev`
+- install axios `npm install axios`
+- run customer tests `mocha test/customer.test.js`
+- run menu item tests `mocha test/menuItem.test.js`
+- run order tests `mocha test/order.test.js`
