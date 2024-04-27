@@ -1,0 +1,17 @@
+<div class="container mx-auto">
+    <h1 class="text-3xl font-semibold text-center mt-5">Our Menu</h1>
+    <p class="text-center mt-5">Please select dishes from our menu</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
+        {{!-- add menu here from api --}}
+        {{#each this.model as |item|}}
+            <div class="bg-white p-5 rounded-lg shadow-md">
+                <img src="{{item.imageUrl}}" alt="{{item.name}}" class="w-full h-64 object-cover mb-4">
+                <h2 class="text-xl font-semibold">{{item.name}}</h2>
+                <p class="text-gray-500">{{item.description}}</p>
+                <p class="text-gray-500">Price: ${{item.price}}</p>
+                <button class="bg-[#1C1E24] text-white px-4 py-2 mt-2 rounded-lg">Order Now</button>
+            </div>
+        {{/each}}
+    </div>
+    <br>
+</div>
