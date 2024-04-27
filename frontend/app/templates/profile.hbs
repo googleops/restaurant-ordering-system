@@ -1,0 +1,29 @@
+{{page-title "Profile"}}
+
+<div class="container mx-auto md:w-1/2">
+  <div class="p-6 rounded-lg">
+    <h2 class="text-center text-gray-700 text-2xl font-semibold mb-4">User Profile</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-2 border border-gray-200 shadow-sm rounded">
+        <p><span class="font-semibold">Username:</span></p>
+        <p>{{this.model.username}}</p>
+      </div>
+      <div class="p-2 border border-gray-200 shadow-sm rounded">
+        <p><span class="font-semibold">Email:</span></p>
+        <p>{{this.model.email}}</p>
+      </div>
+      <div class="p-2 border border-gray-200 shadow-sm rounded">
+        <p><span class="font-semibold">Phone:</span></p>
+        <p>{{this.model.phone}}</p>
+      </div>
+      <div class="p-2 border border-gray-200 shadow-sm rounded">
+        <p><span class="font-semibold">Address:</span></p>
+        <p>{{this.model.address}}</p>
+      </div>
+      <div class="p-2 border border-gray-200 shadow-sm rounded">
+        <p><span class="font-semibold">Principal Type:</span></p>
+        <p>{{this.model.principalType}}</p>
+      </div>
+    </div>
+  </div>
+</div>
