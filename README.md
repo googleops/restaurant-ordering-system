@@ -148,6 +148,21 @@ this is a simple restaurant ordering system that allows customers to browse avai
     - **Allow the relation to be nested in REST APIs**: No
     - **Disable the relation from being included**: No
 
+### Setup ember.js
+- install ember-cli `npm install -g ember-cli`
+- create ember.js project and  install tailwindcss
+```
+npx ember-cli new frontend --embroider --no-welcome
+cd frontend
+npm install -D tailwindcss postcss postcss-loader autoprefixer
+npx tailwindcss init -p
+```
+- generate footer and header components
+```
+ember generate component header-component
+ember generate component footer-component
+```
+
 # API Documentation
 ## Authentication
 - **POST /api/Customer/login**: Login a customer
