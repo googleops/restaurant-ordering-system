@@ -11,4 +11,5 @@ Router.map(function () {
   this.route('login');
   this.route('profile');
   this.route('not-found', { path: '/*path' });
+  this.route('my-order');
 });
