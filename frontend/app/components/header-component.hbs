@@ -4,5 +4,19 @@
     <div class="w-10/12 flex justify-center">
         <a href="/" class="text-2xl font-bold text-white no-underline">Home</a>
         <a href="/menu" class="text-2xl font-bold text-white no-underline ml-5">Menu</a>
+
+        {{#if this.session.isAuthenticated}}
+            <div class="dropdown ml-5">
+                <a href="#" class="text-2xl font-bold text-white no-underline dropdown-toggle">Profile</a>
+                <div class="dropdown-content">
+                    <a href="/profile" class="text-2xl font-bold text-white no-underline">Profile</a>
+                    <a href="/orders" class="text-2xl font-bold text-white no-underline">Orders</a>
+                    <a href="/logout" class="text-2xl font-bold text-white no-underline">Logout</a>
+                </div>
+            </div>
+        {{else}}
+            <a href="/login" class="text-2xl font-bold text-white no-underline ml-5">Login</a>
+        {{/if}}
+
     </div>
 </nav>
