@@ -47,7 +47,7 @@ describe('MenuItem', function() {
                 description: `Description for Menu Item ${i}`,
                 price: i * 10,
                 quantity: 100,
-                imageUrl: `https://example.com/menu-item-${i}.jpg`
+                imageUrl: `images/menu/${i}.jpg`
             });
             menuItemIds.push(menuItem.id);
         }
