@@ -1,32 +1,32 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    /* Background color */
-    min-width: 160px;
-    /* Minimum width */
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    /* Box shadow */
-    padding: 12px 16px;
-    /* Padding */
-    z-index: 1;
-    /* Stack order */
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  /* Background color */
+  min-width: 160px;
+  /* Minimum width */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  /* Box shadow */
+  padding: 12px 16px;
+  /* Padding */
+  z-index: 1;
+  /* Stack order */
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 4px 8px;
-    text-decoration: none;
-    display: block;
+  color: black;
+  padding: 4px 8px;
+  text-decoration: none;
+  display: block;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
