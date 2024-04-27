@@ -1,0 +1,13 @@
+import Route from '@ember/routing/route';
+
+export default class MakeOrderRoute extends Route {
+    async model() {
+        let response = await fetch('http://localhost:3000/api/menuitems');
+        let data = await response.json();
+        data.forEach(item => {
+            item.stock = item.quantity;
+            item.quantity = 0;
+        });
+        return data;
+    }
+}
