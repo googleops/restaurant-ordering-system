@@ -10,20 +10,27 @@
       </div>
       <div class="p-2 border border-gray-200 shadow-sm rounded">
         <p><span class="font-semibold">Email:</span></p>
-        <p>{{this.model.email}}</p>
+        {{input type="text" value=this.model.email class="input-field border border-gray-200"}}
       </div>
       <div class="p-2 border border-gray-200 shadow-sm rounded">
         <p><span class="font-semibold">Phone:</span></p>
-        <p>{{this.model.phone}}</p>
+        {{input type="text" value=this.model.phone class="input-field border border-gray-200"}}
       </div>
       <div class="p-2 border border-gray-200 shadow-sm rounded">
         <p><span class="font-semibold">Address:</span></p>
-        <p>{{this.model.address}}</p>
+        {{input type="text" value=this.model.address class="input-field border border-gray-200"}}
       </div>
       <div class="p-2 border border-gray-200 shadow-sm rounded">
         <p><span class="font-semibold">Principal Type:</span></p>
         <p>{{this.model.principalType}}</p>
       </div>
+      <div class="p-2 border border-gray-200 shadow-sm rounded">
+        <p><span class="font-semibold">New Password:</span></p>
+        {{input type="password" value=this.model.password class="input-field border border-gray-200"}}
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button {{on "click" this.saveProfile}} class="border border-gray-200 bg-blue-500 text-white rounded px-4 py-2">Save</button>
     </div>
   </div>
 </div>

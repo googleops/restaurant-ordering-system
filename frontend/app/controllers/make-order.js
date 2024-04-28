@@ -4,9 +4,11 @@ import { action, computed } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import fetch from 'fetch';
 import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 
 export default class MakeOrderController extends Controller {
   @service session;
+  @service router;
   @tracked items = this.model;
 
   @computed('items.@each.quantity')
@@ -49,5 +51,7 @@ export default class MakeOrderController extends Controller {
     }
 
     // handle successful order
+    // redirect to my orders page
+    this.router.transitionTo('my-order');
   }
 }

@@ -56,6 +56,7 @@ export default class LoginFormComponent extends Component {
 
       // Redirect to home page
       this.args.onSuccess();
+      this.router.transitionTo('profile');
     } else {
       alert('Login failed');
     }
