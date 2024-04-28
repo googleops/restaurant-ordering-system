@@ -70,7 +70,7 @@ describe('MenuItem', function() {
         for (let i = 1; i <= 3; i++) {
             await app.models.OrderItem.create({
                 orderId: order.id,
-                menuItemId: i,
+                menuItemId: menuItemIds[i - 1],
                 quantity: i,
                 price_at_order: i * 10,
                 createdAt: new Date(),
@@ -178,11 +178,11 @@ describe('MenuItem', function() {
 
             const orderItems = await app.models.OrderItem.find({ where: { orderId: orders[0].id } });
             expect(orderItems).to.have.lengthOf(3);
-            expect(orderItems[0]).to.have.property('menuItemId', 1);
+            expect(orderItems[0]).to.have.property('menuItemId', menuItemIds[0]);
             expect(orderItems[0]).to.have.property('quantity', 1);
-            expect(orderItems[1]).to.have.property('menuItemId', 2);
+            expect(orderItems[1]).to.have.property('menuItemId', menuItemIds[1]);
             expect(orderItems[1]).to.have.property('quantity', 2);
-            expect(orderItems[2]).to.have.property('menuItemId', 3);
+            expect(orderItems[2]).to.have.property('menuItemId', menuItemIds[2]);
             expect(orderItems[2]).to.have.property('quantity', 3);
         });
 

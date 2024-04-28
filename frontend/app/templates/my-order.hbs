@@ -1,6 +1,6 @@
 {{page-title "My Orders"}}
 
-<div class="container mx-auto w-1/2">
+<div class="container mx-auto md:w-1/2">
   <h2 class="text-center text-gray-700 text-2xl font-semibold mb-4">Order Details</h2>
   {{#each this.model as |order|}}
     <div class="bg-gray-100 p-6 rounded-lg mb-4">
@@ -24,10 +24,17 @@
       </div>
       <h3 class="text-center text-gray-700 text-xl font-semibold mb-4">Order Items</h3>
       {{#each order.item_list as |item|}}
-        <div class="p-2 border border-gray-200 shadow-sm rounded mb-2">
-          <p><span class="font-semibold">Order Item ID:</span> {{item.id}}</p>
-          <p><span class="font-semibold">Price: $</span> {{item.price_at_order}}</p>
-          <p><span class="font-semibold">Quantity:</span> {{item.quantity}}</p>
+        <div class="p-2 border border-gray-200 shadow-sm rounded mb-2 grid md:grid-cols-3 gap-4">
+          <div class="col-span-3">
+            <p><span class="font-semibold">{{item.menuItem.name}}</span></p>
+          </div>
+          <div class="col-span-1">
+            <img src={{item.menuItem.imageUrl}} alt={{item.menuItem.name}} class="h-32 w-48 mx-auto mb-2 rounded-lg">
+          </div>
+          <div class="col-span-2">
+            <p><span class="font-semibold">Price: $</span> {{item.price_at_order}}</p>
+            <p><span class="font-semibold">Quantity:</span> {{item.quantity}}</p>
+          </div>
           {{!-- Add more fields as needed --}}
         </div>
       {{/each}}

@@ -24,6 +24,16 @@ export default class MyOrderRoute extends Route {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       let orderItems = await response.json();
+      for (let orderItem of orderItems) {
+        let response = await fetch(
+          `http://localhost:3000/api/menuitems/${orderItem.menuItemId}?access_token=${token}`,
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        let menuItem = await response.json();
+        orderItem.menuItem = menuItem;
+      }
 
       item_list.push(orderItems);
     }
