@@ -23,6 +23,45 @@ this is a simple restaurant ordering system that allows customers to browse avai
 - Menu Item to Order (Many-to-Many): A menu item can be part of many orders, and an order can include multiple menu items. This relationship should be managed through an intermediary table that records the quantities of each menu item in the order.
 - Customer to Order (One-to-Many): A customer can have multiple orders but each order belongs to one customer.
 
+## Installation
+### Clone the repository
+```
+git clone
+cd restaurant-ordering-system
+```
+
+### PostgreSQL
+```
+sudo apt-get install postgresql postgresql-contrib
+sudo service postgresql start
+sudo -u postgres psql
+DROP DATABASE IF EXISTS restaurant_db;
+CREATE DATABASE restaurant_db;
+CREATE USER restaurant_admin WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE restaurant_db TO restaurant_admin;
+\q
+```
+
+### Install dependencies
+```
+cd backend
+npm install
+cd ../frontend
+npm install
+```
+
+### Start the backend server
+```
+cd backend
+node .
+```
+
+### Start the frontend server
+```
+cd frontend
+npx ember serve
+```
+
 ## Database Schema
 ### Customer
 - id: number (primary key)
@@ -52,7 +91,7 @@ this is a simple restaurant ordering system that allows customers to browse avai
 - quantity: number
 - price_at_order: number
 
-## Installation
+## System Setup
 ### Setup nodejs
 - check nodejs version `node -v` or `node --version` if not installed, install nodejs
 - if using version other than v16, install nvm and switch to v16
