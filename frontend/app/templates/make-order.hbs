@@ -5,7 +5,7 @@
     <div class="grid gap-4 mt-5">
         {{#each this.model as |item|}}
         <div class="bg-white p-5 rounded-lg shadow-md">
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid md:grid-cols-2 gap-4">
                 <div class="p-2 border border-gray-200 shadow-sm rounded">
                     <img src={{item.imageUrl}} alt={{item.name}} class="w-full h-64 object-cover mb-4">
                 </div>
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <button class="bg-[#1C1E24] text-white px-4 py-2 mt-2 rounded-lg" type="button">Order Now</button>
+        <button class="bg-[#1C1E24] text-white px-4 py-2 mt-2 rounded-lg" type="button" {{on "click" this.placeOrder}}>Order Now</button>
     </div>
     <br>
 </div>
