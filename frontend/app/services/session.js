@@ -16,4 +16,11 @@ export default class SessionService extends Service {
     this[key] = value;
     localStorage.setItem(key, value);
   }
+
+  invalidate() {
+    ['token', 'ttl', 'created', 'userId'].forEach((key) => {
+      this[key] = null;
+      localStorage.removeItem(key);
+    });
+  }
 }
