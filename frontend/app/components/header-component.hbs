@@ -12,7 +12,7 @@
                 <div class="dropdown-content">
                     <a href="/profile" class="text-xl font-semibold text-white no-underline">Profile</a>
                     <a href="/my-order" class="text-xl font-semibold text-white no-underline">My Orders</a>
-                    <button {{on "click" this.handleLogout}} class="text-xl font-semibold text-black no-underline">Logout</button>
+                    <button class="text-xl font-semibold text-black no-underline" type="button" {{on "click" this.handleLogout}}>Logout</button>
                 </div>
             </div>
         {{else}}

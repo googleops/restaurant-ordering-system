@@ -15,16 +15,16 @@ export default class ProfileController extends Controller {
       email: this.model.email,
       phone: this.model.phone,
       address: this.model.address,
-      password: this.model.password
+      password: this.model.password,
     };
 
     try {
       let response = await fetch(url, {
         method: 'PATCH',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(profile)
+        body: JSON.stringify(profile),
       });
 
       if (!response.ok) {

@@ -18,7 +18,10 @@ export default class MakeOrderController extends Controller {
 
   @computed('items.@each.price', 'items.@each.quantity')
   get totalPrice() {
-    return this.items.reduce((total, item) => total + item.price * Number(item.quantity), 0);
+    return this.items.reduce(
+      (total, item) => total + item.price * Number(item.quantity),
+      0,
+    );
   }
 
   @action
@@ -32,19 +35,22 @@ export default class MakeOrderController extends Controller {
     let token = this.session.token; // replace with your actual token
     let discount = 0; // replace with your actual discount
     let itemList = this.items
-        .filter(item => item.quantity > 0)
-        .map(item => ({ menu_item_id: item.id, quantity: item.quantity }));
-        
-    let response = await fetch(`http://localhost:3000/api/orders/newOrder?access_token=${token}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
+      .filter((item) => item.quantity > 0)
+      .map((item) => ({ menu_item_id: item.id, quantity: item.quantity }));
+
+    let response = await fetch(
+      `http://localhost:3000/api/orders/newOrder?access_token=${token}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          discount,
+          item_list: itemList,
+        }),
       },
-      body: JSON.stringify({
-        discount,
-        item_list: itemList
-      })
-    });
+    );
 
     if (!response.ok) {
       // handle error

@@ -1,0 +1,18 @@
+{{page-title "Register"}}
+
+<div class="container mx-auto md:w-1/2">
+    <div class="p-6 rounded-lg">
+        <h2 class="text-center text-gray-700 text-2xl font-semibold mb-4">Register</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+            <InputField @label="Username" @type="text" @value={{this.model.username}} />
+            <InputField @label="Email" @type="text" @value={{this.model.email}} />
+            <InputField @label="Phone" @type="text" @value={{this.model.phone}} />
+            <InputField @label="Address" @type="text" @value={{this.model.address}} />
+            <InputField @label="Password" @type="password" @value={{this.model.password}} />
+        </div>
+        <div class="text-center mt-4">
+            <button class="border border-gray-200 bg-blue-500 text-white rounded px-4 py-2" type="button" {{on "click"
+                this.register}}>Register</button>
+        </div>
+    </div>
+</div>

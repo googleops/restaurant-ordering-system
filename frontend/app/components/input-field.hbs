@@ -1,0 +1,8 @@
+{{!-- app/components/input-field.hbs --}}
+<div class="p-2 rounded flex items-center">
+    <p class="font-semibold mr-2">{{@label}}:</p>
+</div>
+
+<div class="p-2 border border-gray-200 shadow-sm rounded flex items-center">
+    {{input type="{{@type}}" value=@value class="input-field border border-gray-200 flex-grow"}}
+</div>
